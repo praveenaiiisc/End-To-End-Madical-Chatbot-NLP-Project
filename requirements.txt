@@ -1,8 +1,8 @@
 ctransformers==0.2.5     # to load the quantize model on cpu that's why we are using ctransformer
 sentence-transformers==2.2.2  # need one free embedding model download from haggingface
-pinecone-client    
-langchain==0.0.225
-flask     # To create frontend
+pinecone-client    # bcz i work with pinecone database
+langchain==0.0.225 
+flask     # To create my frontend
 pypdf
 python-dotenv
 -e .
