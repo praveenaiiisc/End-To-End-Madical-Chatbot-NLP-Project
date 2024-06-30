@@ -2,10 +2,14 @@
 
 ###### =========================================================================== #####
 ###### ============================= Note ======================================== #####
-###### 1. Clone github and create requirement.txt file and write every libary whatever you need in project 
-###### 2. 
-###### 3.
-###### 4.
+###### 1. Clone github and create requirement.txt file and write every libary whatever you need in project.
+###### 2. make pinecone api key and pinecone api environment fron pinecone website
+###### 3. create data folder and put all data inthis folder, create model folder and download llama-2-7b-chat.ggmlv3.q4_0.bin model from haggingface and put in model folder, create reserch folder and make jyupitor notebook of 
+###### -----> first extract the data from pdf
+###### -----> after that create text chunk(split) from the extracted data
+###### -----> after that download the model of embedding from haggingface(this model create 384 dimention of vector)
+
+###### 4. 
 ###### 5.
 
 
