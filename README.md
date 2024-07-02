@@ -8,7 +8,7 @@
 ###### -----> first extract the data from pdf
 ###### -----> after that create text chunk(split) from the extracted data
 ###### -----> after that download the model of embedding from haggingface(this model create 384 dimention of vector)
-
+###### -----> make emebeddings of our data documents(pdf) and store in pinecone database
 ###### 4. 
 ###### 5.
 
