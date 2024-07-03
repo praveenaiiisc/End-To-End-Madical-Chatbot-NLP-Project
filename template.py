@@ -14,7 +14,7 @@ list_of_files = [
     "research/trials.ipynb",
     "app.py",
     "store_index.py",
-    "static/.gitkeep",
+    "static/.gitkeep", # for flask
     "templates/chat.html"
 
 ]
@@ -22,7 +22,7 @@ list_of_files = [
 
 for filepath in list_of_files:
    filepath = Path(filepath)
-   filedir, filename = os.path.split(filepath)
+   filedir, filename = os.path.split(filepath)  # split both folder and filename from filepath
 
    if filedir !="":
       os.makedirs(filedir, exist_ok=True)

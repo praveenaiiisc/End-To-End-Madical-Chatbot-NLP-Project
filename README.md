@@ -9,7 +9,9 @@
 ###### -----> after that create text chunk(split) from the extracted data
 ###### -----> after that download the model of embedding from haggingface(this model create 384 dimention of vector)
 ###### -----> make emebeddings of our data documents(pdf) and store in pinecone database
-###### 4. 
+###### 4. Creting Modular Coading Pipeline
+###### -------> for doing manually to create folder name we make a template.py file and created all folder using os and logging for info
+###### --------> for setup any file in local peackage so that i can easily import function from that file, for doing this we create a setup.py file (This is the main part of modular coading)
 ###### 5.
 
 
