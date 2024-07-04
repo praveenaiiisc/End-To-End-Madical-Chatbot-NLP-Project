@@ -2,10 +2,10 @@
 # from langchain.vectorstores import Pinecone
 # import pinecone
 from src.helper import Langchain_RAG
-from dotenv import load_dotenv
+# from dotenv import load_dotenv
 import os
 
-load_dotenv()
+# load_dotenv()
 
 # PINECONE_API_KEY = os.environ.get('PINECONE_API_KEY')
 # PINECONE_API_ENV = os.environ.get('PINECONE_API_ENV')

@@ -12,8 +12,9 @@
 ###### 4. Creting Modular Coading Pipeline
 ###### -------> for doing manually to create folder name we make a template.py file and created all folder using os and logging for info
 ###### --------> for setup any file in local peackage so that i can easily import function from that file, for doing this we create a setup.py file (This is the main part of modular coading)
-###### --------> ok, Now goes to src/helper,py file and paste my code of documents and emebeddings regarding and this file imported in store_index.py file
-###### 5. 
+###### --------> ok, Now goes to src/helper,py file and paste my code of documents(data) and emebeddings regarding and this file imported in store_index.py file
+###### 5.Now i have to complete frontend right now, So we create app.py and put model pipeline and question-answering regarding full code,
+###### ------>create one chatboot templte from html and css store in templtes and static folder, so just import in my app.py folder
 
 
 ###### =========================================================================== #####
