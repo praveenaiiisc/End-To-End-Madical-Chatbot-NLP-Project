@@ -8,14 +8,13 @@ logging.basicConfig(level=logging.INFO, format='[%(asctime)s]: %(message)s:')
 list_of_files = [
     "src/__init__.py",
     "src/helper.py",
-    "src/prompt.py",
     ".env",     # for environment variables
     "setup.py",
     "research/trials.ipynb",
     "app.py",
     "store_index.py",
-    "static/.gitkeep", # for flask
-    "templates/chat.html"
+    "static/.gitkeep", # for Css file
+    "templates/chat.html" # for Html file
 
 ]
 
