@@ -1,4 +1,4 @@
-# End-to-end-Medical-Chatbot-using-Llama2
+# End-to-end-Medical-Chatbot
 - In this project, I implement a **MADICAL-CHATBOT** by using FLASK (Web framework) and FAISS (Building a vector storage) and LangChain i.e RAG(Retrieval Augmented Generation) implemantation to finetune model "meta-llama/Meta-Llama-3-8B-Instruct" on given dataset Madecal Book(GALE ENCYCLOPEDIA of MEDICINE) and ask question from this book, So this madical chatbot generate good responce from this book.
 - Result
 - ![alt text](<Screenshot 2024-07-07 224124.png>)
