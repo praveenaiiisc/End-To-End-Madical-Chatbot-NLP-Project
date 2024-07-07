@@ -20,8 +20,7 @@
 ###### =================================================================================== #####
 
 
-##### How to run?
-- Clone the repository
+- How to run?
 
 ```bash
 Project repo: https://github.com/
