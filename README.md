@@ -17,7 +17,7 @@
 - Now finnaly create app.py and put model pipeline and question-answering regarding full code,
 - create one chatboot templte from html and css store in templtes and static folder, so just import in my app.py folder
 
-###### =============================================================================================== #####
+###### =========================================================================================== #####
 
 
 #### How to run?
@@ -25,40 +25,12 @@
 
 ```bash
 Project repo: https://github.com/
-```
-
--  STEP 01- Create a conda environment after opening the repository
-
-```bash
 conda create -n mchatbot python=3.8 -y
-```
-
-```bash
 conda activate mchatbot
-```
-
-- STEP 02- install the requirements
-```bash
 pip install -r requirements.txt
-```
-
-```bash
 # run the following command
 python store_index.py
-```
-
-```bash
 # Finally run the following command
 python app.py
-```
-
-```bash
 open up localhost:
 ```
-
-#### Techstack Used:
-- Python
-- LangChain
-- Flask
-- Meta Llama3
-- FAISS
