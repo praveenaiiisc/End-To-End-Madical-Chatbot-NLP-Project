@@ -7,7 +7,7 @@
 - ![alt text](image-2.png)
 - ![alt text](image-3.png)
 
-###### ============================= Descrived Implementation ====================================== #####
+###### ============================= Descrived Implementation ==================================== #####
 - Create requirement.txt file and write every libary whatever you need in project.
 - Create reserch folder and make jyupitor notebook of our project.
 - Creting Modular Coading Pipeline
