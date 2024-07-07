@@ -1,9 +1,11 @@
 # from langchain.document_loaders import PyPDFLoader, DirectoryLoader
-from langchain.document_loaders import UnstructuredPDFLoader, PDFMinerLoader,TextLoader
+# from langchain.document_loaders import UnstructuredPDFLoader, PDFMinerLoader,TextLoader
 from langchain.text_splitter import RecursiveCharacterTextSplitter
 # from langchain.embeddings import HuggingFaceEmbeddings
+from langchain.document_loaders import UnstructuredPDFLoader,PDFMinerLoader,TextLoader
 from langchain_community.embeddings import HuggingFaceEmbeddings
-from langchain.vectorstores import FAISS  # fastly search algo and store embedding of my database
+# from langchain_community.embeddings import HuggingFaceEmbeddings
+# from langchain.vectorstores import FAISS  # fastly search algo and store embedding of my database
 
 class Langchain_RAG:
     def __init__(self,pdf_file_path):
@@ -48,7 +50,7 @@ class Langchain_RAG:
 
 
 
-# #download embedding model
-# def download_hugging_face_embeddings():
-#     embeddings = HuggingFaceEmbeddings(model_name="sentence-transformers/all-MiniLM-L6-v2")
-#     return embeddings
+#download embedding model
+def download_hugging_face_embeddings():
+    embeddings = HuggingFaceEmbeddings(model_name="BAAI/bge-small-en-v1.5")
+    return embeddings
