@@ -2,7 +2,10 @@
 - In this project, I implement a **MADICAL-CHATBOT** by using FLASK(Web framework) and FAISS(Building a vector storage) and LangChain i.e RAG(Retrieval Augmented Generation) implemantation to finetune model "meta-llama/Meta-Llama-3-8B-Instruct" on given dataset Madecal Book(GALE ENCYCLOPEDIA of MEDICINE) and ask question from this book, So this madical chatbot generate good respomce from this book.
 - Result
 - ![alt text](<Screenshot 2024-07-07 224124.png>)
-- ![alt text](<Screenshot 2024-07-07 225942.png>) ![alt text](<Screenshot 2024-07-07 225900.png>) ![alt text](<Screenshot 2024-07-07 224409.png>) ![alt text](<Screenshot 2024-07-07 224325.png>) ![alt text](<Screenshot 2024-07-07 224247.png>)
+- ![alt text](image.png)
+- ![alt text](image-1.png)
+- ![alt text](image-2.png)
+- ![alt text](image-3.png)
 
 ###### ============================================================================================== #####
 ###### ============================= Descrived Implementation ======================================== #####
