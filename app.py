@@ -1,26 +1,20 @@
 from flask import Flask, render_template, jsonify, request
 from src.helper import download_hugging_face_embeddings
 from store_index import retriever
-
-# from dotenv import load_dotenv
-# # from src.prompt import *
-
 import torch
 from IPython.display import display_markdown
 from transformers import AutoTokenizer, AutoModelForCausalLM, BitsAndBytesConfig
-# from langchain.text_splitter import RecursiveCharacterTextSplitter
 from transformers import pipeline
 import transformers
 import time
 from langchain_community.vectorstores import FAISS
-# from langchain.docstore import InMemoryDocstore
 from langchain_community.docstore.in_memory import InMemoryDocstore
 import faiss
+import time
+
 embeddings = download_hugging_face_embeddings()
-# Initialize an empty FAISS index
 dimension = embeddings.client.get_sentence_embedding_dimension()
 index = faiss.IndexFlatL2(dimension)
-
 docstore = InMemoryDocstore()
 
 ### for semantic cache
@@ -34,7 +28,6 @@ app = Flask(__name__) # it will create the web application
 ##########################################################################################################################
 ##########################################################################################################################
 
-# load_dotenv()
 # Hugging Face model id
 model_id = "meta-llama/Meta-Llama-3-8B-Instruct"
 pipeline = transformers.pipeline(
@@ -53,8 +46,6 @@ terminators =  [
     pipeline.tokenizer.eos_token_id,
     pipeline.tokenizer.convert_tokens_to_ids("<|eot_id|>")]
 
-
-import time
 # This class is used to generate responses from an LLM model
 class Llama3_8B_gen:
     def __init__(self, pipeline, embeddings, vector_store, threshold):
@@ -115,50 +106,9 @@ def Rag_qa(query):
 ##########################################################################################################################
 ##########################################################################################################################
 
-# display_markdown(Rag_qa("What are Allergies"),raw=True)
-
-# load_dotenv()
-
-# PINECONE_API_KEY = os.environ.get('PINECONE_API_KEY')
-# PINECONE_API_ENV = os.environ.get('PINECONE_API_ENV')
-
-
-# embeddings = download_hugging_face_embeddings()
-
-# #Initializing the Pinecone
-# pinecone.init(api_key=PINECONE_API_KEY,
-#               environment=PINECONE_API_ENV)
-
-# index_name="medical-bot"
-
-#Loading the index
-# docsearch=Pinecone.from_existing_index(index_name, embeddings)
-
-
-# PROMPT=PromptTemplate(template=prompt_template, input_variables=["context", "question"])
-
-# chain_type_kwargs={"prompt": PROMPT}
-
-# llm=CTransformers(model="model/llama-2-7b-chat.ggmlv3.q4_0.bin",
-#                   model_type="llama",
-#                   config={'max_new_tokens':512,
-#                           'temperature':0.8})
-
-
-# qa=RetrievalQA.from_chain_type(
-#     llm=llm, 
-#     chain_type="stuff", 
-#     retriever=docsearch.as_retriever(search_kwargs={'k': 2}),
-#     return_source_documents=True, 
-#     chain_type_kwargs=chain_type_kwargs)
-
-
-
 @app.route("/")
 def index():
     return render_template('chat.html')   # opend html cole on local host 
-
-
 
 @app.route("/get", methods=["GET", "POST"])
 def chat():
@@ -172,9 +122,5 @@ def chat():
     # print("Chatbot_Response : ", result["result"])
     return str(result)
 
-
-
 if __name__ == '__main__':
     app.run(host="0.0.0.0", port= 8080, debug= True)
-
-
