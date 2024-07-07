@@ -17,7 +17,7 @@
 - Now finnaly create app.py and put model pipeline and question-answering regarding full code,
 - create one chatboot templte from html and css store in templtes and static folder, so just import in my app.py folder
 
-###### ============================================================================ #####
+###### =================================================================================== #####
 
 
 ##### How to run?
