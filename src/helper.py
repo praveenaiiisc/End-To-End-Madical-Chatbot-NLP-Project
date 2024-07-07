@@ -1,12 +1,12 @@
-# from langchain.document_loaders import PyPDFLoader, DirectoryLoader
-# from langchain.document_loaders import UnstructuredPDFLoader, PDFMinerLoader,TextLoader
 from langchain.text_splitter import RecursiveCharacterTextSplitter
-# from langchain.embeddings import HuggingFaceEmbeddings
-from langchain.document_loaders import UnstructuredPDFLoader,PDFMinerLoader,TextLoader
-from langchain_community.embeddings import HuggingFaceEmbeddings
+from langchain_community.document_loaders import UnstructuredPDFLoader,PDFMinerLoader,TextLoader
+# from langchain_community.embeddings import HuggingFaceEmbeddings
+from langchain_huggingface import HuggingFaceEmbeddings
 # from langchain_community.embeddings import HuggingFaceEmbeddings
 # from langchain.vectorstores import FAISS  # fastly search algo and store embedding of my database
-
+from langchain_community.vectorstores import FAISS
+# from langchain.docstore import InMemoryDocstore
+# import faiss
 class Langchain_RAG:
     def __init__(self,pdf_file_path):
         self.embeddings = HuggingFaceEmbeddings(model_name="BAAI/bge-small-en-v1.5")

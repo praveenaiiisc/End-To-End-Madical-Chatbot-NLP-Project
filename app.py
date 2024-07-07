@@ -1,26 +1,3 @@
-# # Install Pytorch & other libraries
-# ! pip install "torch==2.1.2" tensorboard
-
-# # Install Hugging Face libraries
-# ! pip install  --upgrade \
-#   "transformers==4.38.2" \
-#   "datasets==2.16.1" \
-#   "accelerate==0.26.1" \
-#   "evaluate==0.4.1" \
-#   "bitsandbytes==0.42.0" \
-#   "trl==0.7.11" \
-#   "peft==0.8.2" \
-#     "langchain" \
-# # "sentence-transformers" \
-# "faiss-cpu"
-# ! pip install unstructured
-# ! pip install pdfminer
-# ! pip install pdfminer.six
-# ! pip install -U langchain-community 
-
-
-
-
 from flask import Flask, render_template, jsonify, request
 from src.helper import download_hugging_face_embeddings
 from store_index import retriever
@@ -36,9 +13,10 @@ from transformers import pipeline
 import transformers
 import time
 from langchain_community.vectorstores import FAISS
-from langchain.docstore import InMemoryDocstore
+# from langchain.docstore import InMemoryDocstore
+from langchain_community.docstore.in_memory import InMemoryDocstore
 import faiss
-embeddings = HuggingFaceEmbeddings(model_name="BAAI/bge-small-en-v1.5")
+embeddings = download_hugging_face_embeddings()
 # Initialize an empty FAISS index
 dimension = embeddings.client.get_sentence_embedding_dimension()
 index = faiss.IndexFlatL2(dimension)
@@ -65,9 +43,10 @@ pipeline = transformers.pipeline(
     token='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',
     model_kwargs={
         "torch_dtype": torch.float16,
-        # "quantization_config": {"load_in_4bit": True},
+        "quantization_config": {"load_in_4bit": True},
         "low_cpu_mem_usage": True,
     },
+    device_map="cuda:2"
 )
 
 terminators =  [
@@ -125,7 +104,8 @@ class Llama3_8B_gen:
         print(f"\033[1m\033[4m{text}\033[0m")
 
 
-text_gen = Llama3_8B_gen(pipeline=pipeline)
+text_gen = Llama3_8B_gen(pipeline=pipeline,embeddings=embeddings,
+                         vector_store=vector_store,threshold=0.1)
 
 def Rag_qa(query):
     retriever_context = retriever(query)
